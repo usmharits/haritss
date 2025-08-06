@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Usamah Al Harits</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Animate.css for fade-in -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+    nav {
+  background-color: #152238; /* navy blue */
+}
+
+nav .navbar-brand {
+  color: #f0f0f0;
+}
+
+nav .navbar-brand:hover {
+  color: #a1b2c3;
+}
+
+nav .nav-link {
+  color: #f0f0f0;
+  font-weight: 500;
+}
+
+nav .nav-link:hover {
+  color: #a1b2c3; /* lighter dusty blue */
+}
+
+    /* Header */
+    header {
+      padding: 3rem 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      border-bottom: 2px solid #dde3ea;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #a1b2c3; /* placeholder color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: #fff;
+      user-select: none;
+    }
+    header h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: #152238;
+    }
+    header h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #576574;
+    }
+    /* Contact */
+    .contact-info a {
+      color: #152238;
+      text-decoration: none;
+      margin-right: 1.2rem;
+      font-weight: 500;
+    }
+    .contact-info a:hover {
+      color: #4a6fa5;
+      text-decoration: underline;
+    }
+    /* Section Titles */
+    section h3 {
+      color: #152238;
+      border-bottom: 2px solid #a1b2c3;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+    /* About & Hobbies */
+    .text-content {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #3a3a3a;
+    }
+    /* Lists */
+    ul.simple-list {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      font-size: 1.1rem;
+      color: #3a3a3a;
+    }
+    /* Education */
+    .education-list li {
+      margin-bottom: 0.8rem;
+    }
+    /* Skill bars */
+    .progress {
+      height: 20px;
+      border-radius: 10px;
+      background-color: #e9ecef;
+      margin-bottom: 1rem;
+    }
+    .progress-bar {
+      background-color: #4a6fa5;
+      font-weight: 600;
+      line-height: 20px;
+      color: #fff;
+      text-align: right;
+      padding-right: 0.5rem;
+      transition: width 1.2s ease-in-out;
+    }
+    /* Language circles */
+    .language-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #e9ecef;
+      position: relative;
+      margin: 0 1rem 1rem 0;
+    }
+    .language-circle svg circle {
+      fill: none;
+      stroke-width: 10;
+      stroke-linecap: round;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+    .language-circle .bg {
+      stroke: #dde3ea;
+    }
+    .language-circle .progress {
+      stroke: #4a6fa5;
+      stroke-dasharray: 283;
+      stroke-dashoffset: 283;
+      transition: stroke-dashoffset 1.5s ease;
+    }
+    .language-circle .percentage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 700;
+      color: #152238;
+      font-size: 1.3rem;
+    }
+    /* Experience cards */
+    .experience-card {
+      margin-bottom: 1.5rem;
+      border-left: 5px solid #4a6fa5;
+      box-shadow: 0 2px 8px rgba(74, 111, 165, 0.15);
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      background-color: #f9fbff;
+    }
+    .experience-card h5 {
+      font-weight: 600;
+      color: #152238;
+    }
+    .experience-card .date {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #6c757d;
+      margin-bottom: 0.6rem;
+    }
+    /* Article cards */
+    .article-card {
+      box-shadow: 0 2px 8px rgba(74, 111, 165, 0.15);
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      background-color: #f9fbff;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+    .article-card:hover {
+      box-shadow: 0 6px 14px rgba(74, 111, 165, 0.3);
+    }
+    .article-card h6 {
+      font-weight: 600;
+      color: #152238;
+      margin-bottom: 0.5rem;
+    }
+    .article-card p {
+      font-size: 1rem;
+      color: #3a3a3a;
+    }
+    /* Footer spacing */
+    footer {
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+    }
+    /* Responsive */
+    @media (max-width: 575px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+      .profile-pic {
+        margin-bottom: 1rem;
+      }
+    }
+
+    #hobbies ul {
+  display: flex;
+  gap: 1rem;
+  padding-left: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+#hobbies li {
+  background: #1e1e1e; /* warna gelap, bisa disesuaikan */
+  color: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  flex: 1 1 200px; /* responsif, minimal lebar 200px */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+#hobbies li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+#hobbies li span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#hobbies li p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  background-color: #f0f0f0;
+  margin: left;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-info a {
+  position: relative;
+  display: inline-block;
+  color: #4a6fa5; /* tampilkan warna berbeda dari teks biasa */
+  text-decoration: underline; /* biar langsung kelihatan link, termasuk di HP */
+  margin-right: 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (hover: hover) {
+  /* efek hover hanya untuk device yang support (desktop) */
+  .contact-info a {
+    text-decoration: none;
+  }
+
+  .contact-info a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #4a6fa5;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .contact-info a:hover {
+    color: #4a6fa5;
+  }
+
+  .contact-info a:hover::after {
+    width: 100%;
+  }
+
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm navbar-dark navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-light fw-bold mx-auto" href="#">Usamah Al Harits</a>
+  </div>
+</nav>
+
+
+  <!-- Header -->
+  <header class="container mt-5 pt-5 animate__animated animate__fadeInDown">
+    <div class="profile-pic" aria-label="Foto Profil Placeholder">
+      <img src="haritss.jpg" alt="foto profil" />
+    </div>
+    <div>
+      <h1>Usamah Al Harits</h1>
+      <h2>Mahasiswa Teknik Informatika</h2>
+      <div class="contact-info mt-2">
+        <a href="mailto:emailnya.haritz@gmail.com" target="_blank" rel="noopener noreferrer">emailnya.haritz@gmail.com</a>
+        <a href="https://wa.me/6287776656158" target="_blank" rel="noopener noreferrer">0877-7665-6158</a>
+        <a href="https://www.linkedin.com/in/usamah-al-harits-0781b62a4/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://instagram.com/byharits_" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <!-- Tentang Saya -->
+    <section id="about" class="mb-5 animate__animated" data-animate="fadeIn">
+      <h3>Tentang Saya</h3>
+      <p class="text-content"> Saya adalah seorang penulis dengan ketertarikan mendalam pada konten digital, storytelling, dan bagaimana kata-kata membentuk cara kita terhubung, belajar, dan membuat keputusan. Menulis bagi saya bukan sekadar merangkai kalimat, tapi menciptakan narasi yang bermakna, terarah, dan terstruktur.
+      </p>
+      <p class="text-content"> Gaya menulis saya cenderung jelas dan empatik. Saya berusaha membuat tulisan yang berbicara kepada audiens, bukan sekadar menyampaikan. Mulai dari artikel, caption, hingga teks formal atau opini ringan, saya senang menyesuaikan nada tulisan agar sesuai dengan konteks dan tujuan — apakah itu untuk memberi informasi, membujuk, atau mengajak merenung.
+      </p>
+      <p class="text-content"> Saya juga tertarik dengan pertemuan antara bahasa, teknologi, dan perilaku manusia. Sebagai mahasiswa Teknik Informatika, saya paham pentingnya komunikasi dalam menyederhanakan hal-hal kompleks. Menulis memberi saya ruang untuk menerjemahkan ide menjadi sesuatu yang bisa dirasakan, dipahami, dan ditindaklanjuti oleh orang lain.
+      </p>
+      <p class="text-content"> Saya terus belajar, mencoba hal baru, dan berkembang sebagai penulis — serta selalu terbuka untuk proyek-proyek yang membutuhkan tulisan yang jujur, bermakna, dan berdampak.
+      </p>
+    </section>
+
+    <!-- Pendidikan -->
+    <section id="education" class="mb-5 animate__animated" data-animate="fadeIn">
+      <h3>Pendidikan</h3>
+      <ul class="education-list simple-list">
+        <li><strong>STMIK Bina Patria Magelang</strong> (2022–sekarang) — Teknik Informatika</li>
+        <li><strong>SMK Muhammadiyah 1 Muntilan</strong> (2019–2022) — Rekayasa Perangkat Lunak</li>
+      </ul>
+    </section>
+
+    <!-- Keahlian -->
+    <section id="skills" class="mb-5 animate__animated" data-animate="fadeIn">
+      <h3>Keahlian</h3>
+      <div>
+        <label class="form-label fw-semibold">Microsoft Office</label>
+        <div class="progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: 0;">70%</div>
+        </div>
+
+        <label class="form-label fw-semibold">Writing</label>
+        <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: 0;">75%</div>
+        </div>
+
+        <label class="form-label fw-semibold">Copywriting</label>
+        <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: 0;">80%</div>
+        </div>
+      </div>
+
+      <label class="form-label fw-semibold">Customer Service</label>
+        <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: 0;">80%</div>
+        </div>
+      </div>
+
+      <label class="form-label fw-semibold">Fast Learner</label>
+        <div class="progress" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: 0;">85%</div>
+        </div>
+      </div>
+
+      <label class="form-label fw-semibold">Team Work</label>
+        <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: 0;">80%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bahasa -->
+    <div class="row">
+    <div class="col-md-4 mb-3">
+      <div class="p-3 border rounded shadow-sm bg-light">
+        <div class="d-flex justify-content-between align-items-center">
+          <strong>Indonesia</strong>
+          <span class="badge bg-success">Native</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="p-3 border rounded shadow-sm bg-light">
+        <div class="d-flex justify-content-between align-items-center">
+          <strong>Inggris</strong>
+          <span class="badge bg-warning text-dark">Intermediate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Pengalaman -->
+    <section id="experience" class="mb-5 animate__animated" data-animate="fadeIn">
+      <h3>Pengalaman</h3>
+
+      <div class="experience-card" role="region" aria-labelledby="exp2-title">
+        <h5 id="exp2-title">Ketua, Himpunan Mahasiswa Teknik Informatika</h5>
+        <div class="date">2024–sekarang</div>
+        <p>Memimpin organisasi, merancang program kegiatan, dan mengembangkan hubungan antaranggota untuk mencapai tujuan bersama.</p>
+      </div>
+
+      <div class="experience-card" role="region" aria-labelledby="exp1-title">
+        <h5 id="exp1-title">Sekretaris II, Perhimpunan Mahasiswa Informatika dan Komputer Nasional (Wilayah VII Jateng)</h5>
+        <div class="date">2024–2025</div>
+        <p>Mengelola administrasi dan koordinasi kegiatan organisasi tingkat wilayah, memastikan komunikasi efektif antar anggota dan pengurus.</p>
+      </div>
+
+      <div class="experience-card" role="region" aria-labelledby="exp5-title">
+        <h5 id="exp5-title">Kepala Bidang Pembinaan dan Pengembangan – Dewan Kerja Ranting Sawangan</h5>
+        <div class="date">2023–sekarang</div>
+        <p>Bertanggung jawab dalam mengembangkan program pembinaan anggota, menyusun kegiatan pelatihan, dan memastikan pengembangan keterampilan serta karakter anggota pramuka Dewan Kerja Ranting Sawangan.</p>
+      </div>
+    </section>
+
+      <div class="experience-card" role="region" aria-labelledby="exp2-title">
+        <h5 id="exp2-title">Sekretaris, Himpunan Mahasiswa Teknik Informatika STMIK Bina Patria</h5>
+        <div class="date">2023–2024</div>
+        <p> Mengelola administrasi, menyusun notulen, dan mengkoordinasikan kegiatan organisasi untuk mendukung visi dan misi himpunan.</p>
+      </div>
+
+      <div class="experience-card" role="region" aria-labelledby="exp5-title">
+        <h5 id="exp5-title">Anggota Bidang Pembinaan dan Pengembangan – Dewan Kerja Ranting Sawangan</h5>
+        <div class="date">2019–2023</div>
+        <p>Merancang dan melaksanakan program pelatihan, serta mendukung pengembangan keterampilan dan karakter anggota pramuka Dewan Kerja Ranting Sawangan.</p>
+      </div>
+    </section>
+
+      <div class="experience-card" role="region" aria-labelledby="exp3-title">
+        <h5 id="exp3-title">Provos – Saka Bhayangkara Polresta Magelang</h5>
+        <div class="date">2021–2022</div>
+        <p>Menjaga disiplin anggota, menyelesaikan masalah internal, dan memastikan standar etika serta profesionalisme di lingkungan Polri.</p>
+      </div>
+
+      <div class="experience-card" role="region" aria-labelledby="exp4-title">
+        <h5 id="exp4-title">Internship – PT. Asta Brata Technology</h5>
+        <div class="date">2021</div>
+        <p>Mempelajari pengembangan perangkat lunak secara praktis dan menerapkan ilmu teknik informatika di lingkungan kerja.</p>
+      </div>
+
+       <div class="experience-card" role="region" aria-labelledby="exp3-title">
+        <h5 id="exp3-title">Anggota – Saka Bhayangkara Polresta Magelang</h5>
+        <div class="date">2019–2021</div>
+        <p>Mendukung keamanan dan ketertiban masyarakat serta mengembangkan diri melalui pelatihan dan pendidikan kepramukaan dalam kepolisian.</p>
+      </div>
+
+    <!-- Hobi -->
+    <section id="hobbies" class="mb-5 animate__animated" data-animate="fadeIn">
+  <h3>Hobi</h3>
+  <ul class="simple-list" style="list-style: none; padding-left: 0;">
+    <li>
+      <span role="img" aria-label="musik">🎵</span> Musik  
+      <p>Mendengarkan musik sebagai sumber inspirasi dan cara untuk menjaga fokus saat bekerja atau belajar.</p>
+    </li>
+    <li>
+      <span role="img" aria-label="gaming">📚</span> Membaca   
+      <p>Membaca buku dan artikel untuk memperluas wawasan dan menambah pengetahuan.</p>
+    </li>
+    <li>
+      <span role="img" aria-label="menulis">✍️</span> Menulis  
+      <p>Menulis cerita, diary, dan ide-ide untuk mengekspresikan diri dan mengasah kreativitas.</p>
+    </li>
+  </ul>
+</section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Usamah Al Harits. All Rights Reserved.
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Animate progress bars on scroll
+    function animateProgressBars() {
+      const bars = document.querySelectorAll('#skills .progress-bar');
+      bars.forEach(bar => {
+        const value = bar.parentElement.getAttribute('aria-valuenow');
+        bar.style.width = value + '%';
+      });
+    }
+
+    // Animate language circles stroke dashoffset on scroll
+    function animateLanguageCircles() {
+      const langCircles = document.querySelectorAll('#language .language-circle');
+      langCircles.forEach(circle => {
+        const progressCircle = circle.querySelector('circle.progress');
+        const percentage = parseInt(circle.querySelector('.percentage').textContent);
+        const circumference = 2 * Math.PI * 45; // r=45
+        const offset = circumference - (circumference * percentage) / 100;
+        progressCircle.style.strokeDashoffset = offset;
+      });
+    }
+
+    // Animate sections fadeIn when visible
+    function animateOnScroll() {
+      const animatedSections = document.querySelectorAll('section.animate__animated');
+      animatedSections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('animate__fadeIn');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      animateOnScroll();
+    });
+
+    window.addEventListener('load', () => {
+      animateProgressBars();
+      animateLanguageCircles();
+      animateOnScroll();
+    });
+  </script>
+
+  <script>
+  // Fungsi buat trigger animasi progress bar
+  function animateProgressBars() {
+    const bars = document.querySelectorAll('.progress-bar');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bar = entry.target;
+          const value = bar.parentElement.getAttribute('aria-valuenow');
+          bar.style.width = value + '%';
+        } else {
+          // Reset saat keluar dari viewport biar bisa animasi ulang
+          entry.target.style.width = '0';
+        }
+      });
+    }, {
+      threshold: 0.6 // Adjust sesuai kebutuhan
+    });
+
+    bars.forEach(bar => {
+      observer.observe(bar);
+    });
+  }
+
+  // Panggil saat dokumen siap
+  document.addEventListener('DOMContentLoaded', animateProgressBars);
+</script>
+</body>
+</html>
