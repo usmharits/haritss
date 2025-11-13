@@ -1,322 +1,586 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Usamah Al Harits</title>
-    <!-- Memuat Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Memuat Google Font Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* CSS Kustom untuk melengkapi Tailwind */
-        body {
-            font-family: 'Poppins', sans-serif;
-            /* Menggunakan warna yang hangat sebagai latar belakang body untuk simulasi kertas */
-            background-color: #fdfaf5; 
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Usamah Al Harits</title>
 
-        /* Kelas untuk halaman A4 */
-        .a4-page {
-            width: 21cm;
-            min-height: 29.7cm;
-            padding: 2cm;
-            margin: 2rem auto;
-            background-color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-radius: 8px;
-        }
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-        /* Progress bar untuk keterampilan */
-        .progress-bar-container {
-            background-color: #E5E7EB; /* bg-gray-200 */
-            border-radius: 9999px; /* rounded-full */
-            height: 8px;
-            overflow: hidden;
-        }
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
 
-        .progress-bar {
-            background-color: #A35709; /* Warna aksen Terracotta */
-            height: 100%;
-            border-radius: 9999px; /* rounded-full */
-            transition: width 0.5s ease-in-out;
-        }
+  <!-- Animate.css for fade-in -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
-        /* Garis pemisah halus */
-        hr.subtle-divider {
-            border-top: 1px solid #F3F4F6; /* gray-100 */
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-        }
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+    nav {
+  background-color: #152238; /* navy blue */
+}
 
-        /* Mengatur warna tema kustom */
-        .bg-cream-light { background-color: #FBF8F3; }
-        .text-terracotta { color: #A35709; }
-        .text-olive { color: #556B2F; } /* Contoh warna olive */
-        .text-dark-gray { color: #374151; } /* gray-700 */
-        .text-medium-gray { color: #6B7280; } /* gray-500 */
-        
-        /* Mengatur ukuran font agar lebih mudah dibaca */
-        h1 { font-size: 1.875rem; /* 30px */ font-weight: 700; }
-        h2 { font-size: 1.25rem; /* 20px */ font-weight: 600; }
-        h3 { font-size: 1rem; /* 16px */ font-weight: 600; }
-        p, li, span { font-size: 0.875rem; /* 14px */ line-height: 1.6; }
-        
-        /* Ikon sederhana menggunakan SVG inline */
-        .icon {
-            width: 1.25rem; /* 20px */
-            height: 1.25rem; /* 20px */
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 0.5rem; /* 8px */
-            stroke-width: 2;
-        }
+nav .navbar-brand {
+  color: #f0f0f0;
+}
 
-        /* Hindari page break di dalam elemen */
-        .avoid-break {
-            page-break-inside: avoid;
-        }
+nav .navbar-brand:hover {
+  color: #a1b2c3;
+}
 
-        /* Style untuk print */
-        @media print {
-            body {
-                background-color: white;
-                margin: 0;
-                padding: 0;
-            }
-            .a4-page {
-                width: 100%;
-                min-height: auto;
-                margin: 0;
-                box-shadow: none;
-                border-radius: 0;
-                padding: 1.5cm; /* Kurangi padding untuk print */
-            }
-            /* Sembunyikan tombol atau elemen non-print */
-            .no-print {
-                display: none;
-            }
-        }
-    </style>
+nav .nav-link {
+  color: #f0f0f0;
+  font-weight: 500;
+}
+
+nav .nav-link:hover {
+  color: #a1b2c3; /* lighter dusty blue */
+}
+
+    /* Header */
+    header {
+      padding: 3rem 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      border-bottom: 2px solid #dde3ea;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #a1b2c3; /* placeholder color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: #fff;
+      user-select: none;
+    }
+    header h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: #152238;
+    }
+    header h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #576574;
+    }
+    /* Contact */
+    .contact-info a {
+      color: #152238;
+      text-decoration: none;
+      margin-right: 1.2rem;
+      font-weight: 500;
+    }
+    .contact-info a:hover {
+      color: #4a6fa5;
+      text-decoration: underline;
+    }
+    /* Section Titles */
+    section h3 {
+      color: #152238;
+      border-bottom: 2px solid #a1b2c3;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+    /* About & Hobbies */
+    .text-content {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #3a3a3a;
+    }
+    /* Lists */
+    ul.simple-list {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      font-size: 1.1rem;
+      color: #3a3a3a;
+    }
+    /* Education */
+    .education-list li {
+      margin-bottom: 0.8rem;
+    }
+    /* Skill bars */
+    .progress {
+      height: 20px;
+      border-radius: 10px;
+      background-color: #e9ecef;
+      margin-bottom: 1rem;
+    }
+    .progress-bar {
+      background-color: #4a6fa5;
+      font-weight: 600;
+      line-height: 20px;
+      color: #fff;
+      text-align: right;
+      padding-right: 0.5rem;
+      transition: width 1.2s ease-in-out;
+    }
+    /* Language circles */
+    .language-circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #e9ecef;
+      position: relative;
+      margin: 0 1rem 1rem 0;
+    }
+    .language-circle svg circle {
+      fill: none;
+      stroke-width: 10;
+      stroke-linecap: round;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+    }
+    .language-circle .bg {
+      stroke: #dde3ea;
+    }
+    .language-circle .progress {
+      stroke: #4a6fa5;
+      stroke-dasharray: 283;
+      stroke-dashoffset: 283;
+      transition: stroke-dashoffset 1.5s ease;
+    }
+    .language-circle .percentage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 700;
+      color: #152238;
+      font-size: 1.3rem;
+    }
+    /* Experience cards */
+    .experience-card {
+      margin-bottom: 1.5rem;
+      border-left: 5px solid #4a6fa5;
+      box-shadow: 0 2px 8px rgba(74, 111, 165, 0.15);
+      padding: 1rem 1.5rem;
+      border-radius: 6px;
+      background-color: #f9fbff;
+    }
+    .experience-card h5 {
+      font-weight: 600;
+      color: #152238;
+    }
+    .experience-card .date {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #6c757d;
+      margin-bottom: 0.6rem;
+    }
+    /* Article cards */
+    .article-card {
+      box-shadow: 0 2px 8px rgba(74, 111, 165, 0.15);
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      background-color: #f9fbff;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+    .article-card:hover {
+      box-shadow: 0 6px 14px rgba(74, 111, 165, 0.3);
+    }
+    .article-card h6 {
+      font-weight: 600;
+      color: #152238;
+      margin-bottom: 0.5rem;
+    }
+    .article-card p {
+      font-size: 1rem;
+      color: #3a3a3a;
+    }
+    /* Footer spacing */
+    footer {
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #999;
+    }
+    /* Responsive */
+    @media (max-width: 575px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+      .profile-pic {
+        margin-bottom: 1rem;
+      }
+    }
+
+    #hobbies ul {
+  display: flex;
+  gap: 1rem;
+  padding-left: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+#hobbies li {
+  background: #1e1e1e; /* warna gelap, bisa disesuaikan */
+  color: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  flex: 1 1 200px; /* responsif, minimal lebar 200px */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+#hobbies li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+#hobbies li span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#hobbies li p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  background-color: #f0f0f0;
+  margin: left;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-info a {
+  position: relative;
+  display: inline-block;
+  color: #4a6fa5; /* tampilkan warna berbeda dari teks biasa */
+  text-decoration: underline; /* biar langsung kelihatan link, termasuk di HP */
+  margin-right: 1.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (hover: hover) {
+  /* efek hover hanya untuk device yang support (desktop) */
+  .contact-info a {
+    text-decoration: none;
+  }
+
+  .contact-info a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #4a6fa5;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .contact-info a:hover {
+    color: #4a6fa5;
+  }
+
+  .contact-info a:hover::after {
+    width: 100%;
+  }
+
+
+  </style>
 </head>
-<body class="bg-gray-100">
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm navbar-dark navbar-custom fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-light fw-bold mx-auto" href="#">Usamah Al Harits</a>
+  </div>
+</nav>
 
-    <!-- Kontainer utama untuk halaman A4 -->
-    <div class="a4-page">
-        <div class="grid grid-cols-3 gap-8">
-            
-            <!-- KOLOM KIRI (1/3) -->
-            <aside class="col-span-1 pr-6 border-r border-gray-100">
-                
-                <!-- Foto Profil -->
-                <div class="mb-8 text-center">
-                    <img src="https://placehold.co/150x150/FBF8F3/A35709?text=UA" 
-                         alt="Foto Profil Usamah Al Harits" 
-                         class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-md"
-                         onerror="this.src='https://placehold.co/150x150/FBF8F3/A35709?text=UA'">
-                    <h1 class="text-2xl font-bold text-dark-gray">Usamah Al Harits</h1>
-                    <p class="text-terracotta font-medium mt-1">Part Time Kitchen</p>
-                </div>
 
-                <!-- Data Diri -->
-                <section class="mb-8 avoid-break">
-                    <h2 class="text-lg font-semibold text-terracotta mb-4 border-b border-gray-200 pb-2">Data Diri</h2>
-                    <div class="space-y-3 text-medium-gray">
-                        <div class="flex items-center">
-                            <!-- Ikon Lokasi -->
-                            <svg class="icon text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            <span>Magelang</span>
-                        </div>
-                        <div class="flex items-center">
-                            <!-- Ikon Telepon -->
-                            <svg class="icon text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.308 1.538a11.036 11.036 0 005.39 5.39l1.538-2.308a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                            <span>0877 7665 6158</span>
-                        </div>
-                        <div class="flex items-center">
-                            <!-- Ikon Email -->
-                            <svg class="icon text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                            <span>emailnya.haritz@gmail.com</span>
-                        </div>
-                    </div>
-                </section>
+  <!-- Header -->
+  <header class="container mt-5 pt-5 animate__animated animate__fadeInDown">
+    <div class="profile-pic" aria-label="Foto Profil Placeholder">
+      <img src="haritss.jpg" alt="foto profil" />
+    </div>
+    <div>
+      <h1>Usamah Al Harits</h1>
+      <h2>Mahasiswa Teknik Informatika</h2>
+      <div class="contact-info mt-2">
+        <a href="mailto:emailnya.haritz@gmail.com" target="_blank" rel="noopener noreferrer">emailnya.haritz@gmail.com</a>
+        <a href="https://wa.me/6287776656158" target="_blank" rel="noopener noreferrer">0877-7665-6158</a>
+        <a href="https://www.linkedin.com/in/usamah-al-harits-0781b62a4/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://instagram.com/usmharits" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
+  </header>
 
-                <!-- Keterampilan -->
-                <section class="avoid-break">
-                    <h2 class="text-lg font-semibold text-terracotta mb-4 border-b border-gray-200 pb-2">Keterampilan</h2>
-                    <div class="space-y-4">
-                        <!-- Skill 1 -->
-                        <div>
-                            <p class="text-dark-gray mb-1">Adaptasi & Fast Learner</p>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" style="width: 80%;"></div>
-                            </div>
-                        </div>
-                        <!-- Skill 2 -->
-                        <div>
-                            <p class="text-dark-gray mb-1">Kerapian & Kebersihan</p>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" style="width: 75%;"></div>
-                            </div>
-                        </div>
-                        <!-- Skill 3 -->
-                        <div>
-                            <p class="text-dark-gray mb-1">Teamwork</p>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" style="width: 70%;"></div>
-                            </div>
-                        </div>
-                        <!-- Skill 4 -->
-                        <div>
-                            <p class="text-dark-gray mb-1">Manajemen Waktu</p>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" style="width: 65%;"></div>
-                            </div>
-                        </div>
-                        <!-- Skill 5 -->
-                        <div>
-                            <p class="text-dark-gray mb-1">Customer Service</p>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" style="width: 65%;"></div>
-                            </div>
-                        </div>
-                        <!-- Skill 6 -->
-                        <div>
-                            <p class="text-dark-gray mb-1">Food Preparation</p>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" style="width: 65%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </aside>
+  <main class="container my-5">
+    <!-- Tentang Saya -->
+    <section id="about" class="mb-5 animate__animated" data-animate="fadeIn">
+      <h3>Tentang Saya</h3>
+      <p class="text-content"> Saya adalah seorang penulis dengan ketertarikan mendalam pada konten digital, storytelling, dan bagaimana kata-kata membentuk cara kita terhubung, belajar, dan membuat keputusan. Menulis bagi saya bukan sekadar merangkai kalimat, tapi menciptakan narasi yang bermakna, terarah, dan terstruktur.
+      </p>
+      <p class="text-content"> Gaya menulis saya cenderung jelas dan empatik. Saya berusaha membuat tulisan yang berbicara kepada audiens, bukan sekadar menyampaikan. Mulai dari artikel, caption, hingga teks formal atau opini ringan, saya senang menyesuaikan nada tulisan agar sesuai dengan konteks dan tujuan — apakah itu untuk memberi informasi, membujuk, atau mengajak merenung.
+      </p>
+      <p class="text-content"> Saya juga tertarik dengan pertemuan antara bahasa, teknologi, dan perilaku manusia. Sebagai mahasiswa Teknik Informatika, saya paham pentingnya komunikasi dalam menyederhanakan hal-hal kompleks. Menulis memberi saya ruang untuk menerjemahkan ide menjadi sesuatu yang bisa dirasakan, dipahami, dan ditindaklanjuti oleh orang lain.
+      </p>
+      <p class="text-content"> Saya terus belajar, mencoba hal baru, dan berkembang sebagai penulis — serta selalu terbuka untuk proyek-proyek yang membutuhkan tulisan yang jujur, bermakna, dan berdampak.
+      </p>
+    </section>
 
-            <!-- KOLOM KANAN (2/3) -->
-            <main class="col-span-2">
-                
-                <!-- Pengalaman Kerja -->
-                <section class="mb-8 avoid-break">
-                    <h2 class="text-xl font-semibold text-dark-gray mb-4 flex items-center">
-                        <!-- Ikon Panci / Kerja Dapur -->
-                        <svg class="icon text-terracotta" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        Pengalaman Kerja
-                    </h2>
-                    
-                    <div class="mb-6">
-                        <h3 class="text-lg font-semibold text-dark-gray">Part Time Kitchen Staff – Queenbab ID, Yogyakarta</h3>
-                        <p class="text-sm text-medium-gray mb-2">April 2025 - Juli 2025</p>
-                        <ul class="list-disc list-inside text-medium-gray space-y-1">
-                            <li>Membantu proses persiapan bahan dan penyajian makanan.</li>
-                            <li>Menjaga kebersihan dapur dan memastikan peralatan siap digunakan.</li>
-                            <li>Menata bahan makanan agar selalu tersedia dan terkelola dengan baik.</li>
-                            <li>Bekerja sama dengan tim dapur untuk menjaga kecepatan dan kualitas penyajian.</li>
-                        </ul>
-                    </div>
-                </section>
+    <!-- Pendidikan -->
+    <section id="education" class="mb-5 animate__animated" data-animate="fadeIn">
+      <h3>Pendidikan</h3>
+      <ul class="education-list simple-list">
+        <li><strong>STMIK Bina Patria Magelang</strong> (2022–sekarang) — Teknik Informatika</li>
+        <li><strong>SMK Muhammadiyah 1 Muntilan</strong> (2019–2022) — Rekayasa Perangkat Lunak</li>
+      </ul>
+    </section>
 
-                <!-- Pengalaman Magang -->
-                <section class="mb-8 avoid-break">
-                    <h2 class="text-xl font-semibold text-dark-gray mb-4 flex items-center">
-                        <!-- Ikon Magang/Kantor -->
-                        <svg class="icon text-terracotta" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        Pengalaman Magang
-                    </h2>
-                    <div class="mb-6">
-                        <h3 class="text-lg font-semibold text-dark-gray">Magang – PT. Asta Brata Technology</h3>
-                        <p class="text-sm text-medium-gray mb-2">2021</p>
-                        <ul class="list-disc list-inside text-medium-gray space-y-1">
-                            <li>Belajar beradaptasi di lingkungan kerja profesional.</li>
-                            <li>Melatih kedisiplinan, tanggung jawab, dan kerja sama tim dalam menyelesaikan tugas.</li>
-                        </ul>
-                    </div>
-                </section>
-                
-                <hr class="subtle-divider">
-
-                <!-- Pengalaman Organisasi -->
-                <section class="mb-8 avoid-break">
-                    <h2 class="text-xl font-semibold text-dark-gray mb-4 flex items-center">
-                        <!-- Ikon Organisasi / Orang -->
-                        <svg class="icon text-terracotta" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.004 3.004 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                        </svg>
-                        Pengalaman Organisasi
-                    </h2>
-                    
-                    <div class="space-y-5">
-                        <div class="avoid-break">
-                            <h3 class="text-lg font-semibold text-dark-gray">Ketua – Dewan Kerja Ranting Sawangan</h3>
-                            <p class="text-sm text-medium-gray mb-2">2025 – Sekarang</p>
-                            <ul class="list-disc list-inside text-medium-gray space-y-1">
-                                <li>Mengatur kegiatan dan membimbing anggota agar kompak dan terarah.</li>
-                                <li>Melatih kemampuan komunikasi, kepemimpinan, dan kerja tim.</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="avoid-break">
-                            <h3 class="text-lg font-semibold text-dark-gray">Sekretaris II – Perhimpunan Mahasiswa Informatika dan Komputer Nasional (Wilayah VII Jateng)</h3>
-                            <p class="text-sm text-medium-gray mb-2">2024 – 2025</p>
-                            <ul class="list-disc list-inside text-medium-gray space-y-1">
-                                <li>Mengelola administrasi kegiatan dan memastikan koordinasi antaranggota.</li>
-                                <li>Terbiasa bekerja dengan banyak orang dan mengatur waktu secara efisien.</li>
-                            </ul>
-                        </div>
-
-                        <div class="avoid-break">
-                            <h3 class="text-lg font-semibold text-dark-gray">Kepala Bidang Pembinaan dan Pengembangan – Dewan Kerja Ranting Sawangan</h3>
-                            <p class="text-sm text-medium-gray mb-2">2023 – 2025</p>
-                            <ul class="list-disc list-inside text-medium-gray space-y-1">
-                                <li>Menyusun dan menjalankan kegiatan pelatihan untuk anggota.</li>
-                                <li>Membiasakan diri bekerja dengan rencana dan target waktu yang jelas.</li>
-                            </ul>
-                        </div>
-
-                        <div class="avoid-break">
-                            <h3 class="text-lg font-semibold text-dark-gray">Provos – Saka Bhayangkara Polresta Magelang</h3>
-                            <p class="text-sm text-medium-gray mb-2">2021 – 2022</p>
-                            <ul class="list-disc list-inside text-medium-gray space-y-1">
-                                <li>Menjaga kedisiplinan dan ketertiban dalam kegiatan organisasi.</li>
-                                <li>Menumbuhkan tanggung jawab dan kerja sama tim.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                
-                <hr class="subtle-divider">
-
-                <!-- Pendidikan -->
-                <section class="mb-8 avoid-break">
-                    <h2 class="text-xl font-semibold text-dark-gray mb-4 flex items-center">
-                        <!-- Ikon Pendidikan / Buku -->
-                        <svg class="icon text-terracotta" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v11.494m0 0a7.5 7.5 0 0010.607-4.59c-.203-.01-1.016-.011-1.224 0A5.98 5.98 0 0112 18.253zM12 6.253A7.5 7.5 0 011.393 1.663c.203.01 1.016.011 1.224 0A5.98 5.98 0 0012 6.253zM12 6.253v11.494A5.98 5.98 0 0112 18.253A5.98 5.98 0 0112 6.253z" />
-                        </svg>
-                        Pendidikan
-                    </h2>
-                    
-                    <div class="mb-5">
-                        <h3 class="text-lg font-semibold text-dark-gray">STMIK Bina Patria Magelang</h3>
-                        <p class="text-medium-gray mb-1">Program Studi Teknik Informatika</p>
-                        <p class="text-sm text-medium-gray">2022 – Sekarang</p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-lg font-semibold text-dark-gray">SMK Muhammadiyah 1 Muntilan</h3>
-                        <p class="text-medium-gray mb-1">Rekayasa Perangkat Lunak</p>
-                        <p class="text-sm text-medium-gray">2019 – 2022</p>
-                    </div>
-                </section>
-
-            </main>
+    <!-- Keahlian -->
+    <section id="skills" class="mb-5 animate__animated" data-animate="fadeIn">
+      <h3>Keahlian</h3>
+      <div>
+        <label class="form-label fw-semibold">Microsoft Office</label>
+        <div class="progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: 0;">70%</div>
         </div>
+
+        <label class="form-label fw-semibold">Writing</label>
+        <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: 0;">75%</div>
+        </div>
+
+        <label class="form-label fw-semibold">Copywriting</label>
+        <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: 0;">80%</div>
+        </div>
+      </div>
+
+      <label class="form-label fw-semibold">Customer Service</label>
+        <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: 0;">80%</div>
+        </div>
+      </div>
+
+      <label class="form-label fw-semibold">Fast Learner</label>
+        <div class="progress" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: 0;">85%</div>
+        </div>
+      </div>
+
+      <label class="form-label fw-semibold">Team Work</label>
+        <div class="progress" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: 0;">80%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bahasa -->
+    <div class="row">
+    <div class="col-md-4 mb-3">
+      <div class="p-3 border rounded shadow-sm bg-light">
+        <div class="d-flex justify-content-between align-items-center">
+          <strong>Indonesia</strong>
+          <span class="badge bg-success">Native</span>
+        </div>
+      </div>
     </div>
 
+    <div class="col-md-4 mb-3">
+      <div class="p-3 border rounded shadow-sm bg-light">
+        <div class="d-flex justify-content-between align-items-center">
+          <strong>Inggris</strong>
+          <span class="badge bg-warning text-dark">Intermediate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Pengalaman -->
+    <section id="experience" class="mb-5 animate__animated" data-animate="fadeIn">
+      <h3>Pengalaman</h3>
+
+      <div class="experience-card" role="region" aria-labelledby="exp2-title">
+        <h5 id="exp2-title">Ketua – Dewan Kerja Ranting Sawangan Periode 2025/2028</h5>
+        <div class="date">2025–sekarang</div>
+        <p>Memimpin organisasi, merancang program kegiatan, dan mengembangkan hubungan antaranggota untuk mencapai tujuan bersama.</p>
+      </div>
+
+        <div class="experience-card" role="region" aria-labelledby="exp2-title">
+        <h5 id="exp2-title">Ketua – Himpunan Mahasiswa Teknik Informatika</h5>
+        <div class="date">2024–2025</div>
+        <p>Memimpin organisasi, merancang program kegiatan, dan mengembangkan hubungan antaranggota untuk mencapai tujuan bersama.</p>
+      </div>
+
+      <div class="experience-card" role="region" aria-labelledby="exp1-title">
+        <h5 id="exp1-title">Sekretaris II - Perhimpunan Mahasiswa Informatika dan Komputer Nasional (Wilayah VII Jateng)</h5>
+        <div class="date">2024–2025</div>
+        <p>Mengelola administrasi dan koordinasi kegiatan organisasi tingkat wilayah, memastikan komunikasi efektif antar anggota dan pengurus.</p>
+      </div>
+
+      <div class="experience-card" role="region" aria-labelledby="exp5-title">
+        <h5 id="exp5-title">Kepala Bidang Pembinaan dan Pengembangan – Dewan Kerja Ranting Sawangan</h5>
+        <div class="date">2023–2025</div>
+        <p>Bertanggung jawab dalam mengembangkan program pembinaan anggota, menyusun kegiatan pelatihan, dan memastikan pengembangan keterampilan serta karakter anggota pramuka Dewan Kerja Ranting Sawangan.</p>
+      </div>
+    </section>
+
+      <div class="experience-card" role="region" aria-labelledby="exp5-title">
+        <h5 id="exp5-title">Anggota Bidang Pembinaan dan Pengembangan – Dewan Kerja Ranting Sawangan</h5>
+        <div class="date">2019–2023</div>
+        <p>Merancang dan melaksanakan program pelatihan, serta mendukung pengembangan keterampilan dan karakter anggota pramuka Dewan Kerja Ranting Sawangan.</p>
+      </div>
+    </section>
+
+      <div class="experience-card" role="region" aria-labelledby="exp3-title">
+        <h5 id="exp3-title">Provos – Saka Bhayangkara Polresta Magelang</h5>
+        <div class="date">2021–2022</div>
+        <p>Menjaga disiplin anggota, menyelesaikan masalah internal, dan memastikan standar etika serta profesionalisme di lingkungan Polri.</p>
+      </div>
+
+      <div class="experience-card" role="region" aria-labelledby="exp4-title">
+        <h5 id="exp4-title">Internship – PT. Asta Brata Technology</h5>
+        <div class="date">2021</div>
+        <p>Mempelajari pengembangan perangkat lunak secara praktis dan menerapkan ilmu teknik informatika di lingkungan kerja.</p>
+      </div>
+
+       <div class="experience-card" role="region" aria-labelledby="exp3-title">
+        <h5 id="exp3-title">Anggota – Saka Bhayangkara Polresta Magelang</h5>
+        <div class="date">2019–2021</div>
+        <p>Mendukung keamanan dan ketertiban masyarakat serta mengembangkan diri melalui pelatihan dan pendidikan kepramukaan dalam kepolisian.</p>
+      </div>
+
+    <!-- Hobi -->
+    <section id="hobbies" class="mb-5 animate__animated" data-animate="fadeIn">
+  <h3>Hobi</h3>
+  <ul class="simple-list" style="list-style: none; padding-left: 0;">
+    <li>
+      <span role="img" aria-label="musik">🎵</span> Musik  
+      <p>Mendengarkan musik sebagai sumber inspirasi dan cara untuk menjaga fokus saat bekerja atau belajar.</p>
+    </li>
+    <li>
+      <span role="img" aria-label="gaming">📚</span> Membaca   
+      <p>Membaca buku dan artikel untuk memperluas wawasan dan menambah pengetahuan.</p>
+    </li>
+    <li>
+      <span role="img" aria-label="menulis">✍️</span> Menulis  
+      <p>Menulis cerita, diary, dan ide-ide untuk mengekspresikan diri dan mengasah kreativitas.</p>
+    </li>
+  </ul>
+</section>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Usamah Al Harits. All Rights Reserved.
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Animate progress bars on scroll
+    function animateProgressBars() {
+      const bars = document.querySelectorAll('#skills .progress-bar');
+      bars.forEach(bar => {
+        const value = bar.parentElement.getAttribute('aria-valuenow');
+        bar.style.width = value + '%';
+      });
+    }
+
+    // Animate language circles stroke dashoffset on scroll
+    function animateLanguageCircles() {
+      const langCircles = document.querySelectorAll('#language .language-circle');
+      langCircles.forEach(circle => {
+        const progressCircle = circle.querySelector('circle.progress');
+        const percentage = parseInt(circle.querySelector('.percentage').textContent);
+        const circumference = 2 * Math.PI * 45; // r=45
+        const offset = circumference - (circumference * percentage) / 100;
+        progressCircle.style.strokeDashoffset = offset;
+      });
+    }
+
+    // Animate sections fadeIn when visible
+    function animateOnScroll() {
+      const animatedSections = document.querySelectorAll('section.animate__animated');
+      animatedSections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add('animate__fadeIn');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      animateOnScroll();
+    });
+
+    window.addEventListener('load', () => {
+      animateProgressBars();
+      animateLanguageCircles();
+      animateOnScroll();
+    });
+  </script>
+
+  <script>
+  // Fungsi buat trigger animasi progress bar
+  function animateProgressBars() {
+    const bars = document.querySelectorAll('.progress-bar');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bar = entry.target;
+          const value = bar.parentElement.getAttribute('aria-valuenow');
+          bar.style.width = value + '%';
+        } else {
+          // Reset saat keluar dari viewport biar bisa animasi ulang
+          entry.target.style.width = '0';
+        }
+      });
+    }, {
+      threshold: 0.6 // Adjust sesuai kebutuhan
+    });
+
+    bars.forEach(bar => {
+      observer.observe(bar);
+    });
+  }
+
+  // Panggil saat dokumen siap
+  document.addEventListener('DOMContentLoaded', animateProgressBars);
+</script>
 </body>
 </html>
