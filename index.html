@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="description" content="Portfolio of Usamah Al Harits - Informatics Student & Content Writer">
-  <title>Usamah Al Harits - Portfolio</title>
+  <title>Usamah Al Harits</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -12,77 +16,86 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
-    /* --- 1. CONFIG & VARIABLES --- */
+    /* --- 1. CONFIG & VARIABLES NEXA S5.0 --- */
     :root {
-      /* SF Pro Font Stack for Apple-like aesthetic */
-      --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --color-primary: #0f172a; /* Dark Navy */
-      --color-secondary: #1e3a8a; /* Brighter Navy */
-      --color-accent: #38bdf8; /* Cyan Glow */
-      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-      --glass-bg: rgba(255, 255, 255, 0.75);
-      --glass-border: rgba(255, 255, 255, 0.6);
+        --nexa-primary: #B63E5D; 
+        --nexa-secondary: #8A6A72; 
+        --nexa-primary-light: rgba(182, 62, 93, 0.08); 
+        --nexa-primary-tint: #FF87A7; 
+        --nexa-highlight: #A33552; 
+        --nexa-bg: #F5F5F7;
+        --nexa-text-main: #1D1D1F;
+        --nexa-text-muted: #86868B;
+        --nexa-border: #E5E5EA;
     }
 
     html, body {
-      overscroll-behavior-y: none;
+        overscroll-behavior-y: none;
+        margin: 0;
+        padding: 0;
     }
 
     body {
-      font-family: var(--font-main);
-      background-color: #f0f4f8; /* Slightly brighter background */
-      color: #334155;
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--nexa-bg);
+      background-image: 
+          radial-gradient(circle at 10% 20%, rgba(182, 62, 93, 0.04) 0%, transparent 40%),
+          radial-gradient(circle at 90% 80%, rgba(182, 62, 93, 0.05) 0%, transparent 40%);
+      color: var(--nexa-text-main);
       overflow-x: hidden;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* --- 2. CUSTOM NAVBAR --- */
+    /* --- 2. CUSTOM NAVBAR (NEXA GLASSMORPHISM) --- */
     .navbar {
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.03);
       transition: all 0.3s ease;
       padding: 1rem 0;
     }
     .navbar-brand {
       font-weight: 800;
       letter-spacing: -0.5px;
-      background: linear-gradient(to right, #ffffff, #94a3b8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 1.35rem;
+      color: var(--nexa-text-main);
+      font-size: 1.4rem;
     }
     
     /* Toggle Switch Style */
     .lang-switch {
       cursor: pointer;
-      border: 1px solid rgba(255,255,255,0.15);
+      border: 1px solid var(--nexa-border);
       padding: 6px 16px;
-      border-radius: 50px;
-      background: rgba(255,255,255,0.08);
-      color: white;
+      border-radius: 100px;
+      background: #FFFFFF;
+      color: var(--nexa-text-main);
       font-size: 0.85rem;
-      font-weight: 600;
+      font-weight: 700;
       transition: all 0.3s ease;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
     .lang-switch:hover {
-      background: rgba(255,255,255,0.15);
-      border-color: var(--color-accent);
-      transform: translateY(-1px);
+      background: var(--nexa-primary-light);
+      border-color: var(--nexa-primary);
+      color: var(--nexa-primary);
+      transform: translateY(-2px);
     }
 
     /* --- 3. HEADER / HERO SECTION --- */
     header {
-      background: var(--bg-gradient);
+      background: linear-gradient(135deg, var(--nexa-primary), var(--nexa-highlight));
       color: white;
-      padding: 9rem 0 5rem;
+      padding: 9rem 1rem 5rem 1rem;
       position: relative;
       overflow: hidden;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      margin-bottom: 3rem;
+      box-shadow: 0 10px 40px rgba(182, 62, 93, 0.15);
     }
     
     /* Background Decoration circles */
@@ -91,7 +104,7 @@
       position: absolute;
       top: -50px; right: -50px;
       width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(0,0,0,0) 70%);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
       border-radius: 50%;
       animation: pulseSlow 8s infinite alternate;
     }
@@ -106,265 +119,233 @@
     }
 
     .profile-pic {
-      width: 160px;
-      height: 160px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid rgba(255,255,255,0.2);
-      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
-      transition: transform 0.5s ease;
+      border: 4px solid rgba(255,255,255,0.9);
+      box-shadow: 0 12px 30px rgba(182, 62, 93, 0.3);
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      background: white;
     }
     .profile-pic:hover {
-      transform: scale(1.05) rotate(2deg);
+      transform: scale(1.05) rotate(3deg);
     }
 
     .social-links a {
-      color: rgba(255,255,255,0.6);
-      font-size: 1.4rem;
-      margin: 0 10px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      width: 45px; height: 45px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      margin: 0 8px;
       transition: all 0.3s ease;
-      display: inline-block;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(5px);
     }
     .social-links a:hover {
-      color: var(--color-accent);
+      background: white;
+      color: var(--nexa-primary);
       transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
-    /* --- 4. GENERAL CARD STYLES (Glassmorphism) --- */
+    /* --- 4. GENERAL CARD STYLES (NEXA Style) --- */
     .glass-card {
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 28px; 
+      background: #FFFFFF;
+      border-radius: 28px;
+      border: 1px solid rgba(0, 0, 0, 0.03);
       padding: 2.5rem;
-      box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      height: 100%;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .glass-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.08);
-      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(182, 62, 93, 0.06);
     }
 
     h3.section-title {
       font-weight: 800;
-      color: var(--color-primary);
+      color: var(--nexa-text-main);
       margin-bottom: 1.8rem;
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       letter-spacing: -0.3px;
     }
     h3.section-title i {
-      color: var(--color-secondary);
-      background: rgba(30, 58, 138, 0.08);
-      padding: 8px 10px;
-      border-radius: 10px;
-      font-size: 1.2rem;
+        color: var(--nexa-primary);
+        background: var(--nexa-primary-light);
+        padding: 6px 10px;
+        border-radius: 10px;
+        font-size: 1.1rem;
     }
 
     /* --- 5. TIMELINE EXPERIENCE --- */
     .timeline {
       position: relative;
-      padding-left: 2rem;
-      border-left: 2px solid #cbd5e1;
+      padding-left: 1.8rem;
+      border-left: 2px solid var(--nexa-border);
     }
     .timeline-item {
       position: relative;
       margin-bottom: 2.5rem;
     }
-    .timeline-item:last-child {
-        margin-bottom: 0;
-    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -2.55rem;
-      top: 4px;
+      left: -2.35rem;
+      top: 5px;
       width: 16px;
       height: 16px;
       border-radius: 50%;
-      background: var(--color-secondary);
-      border: 3px solid #f0f4f8;
-      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
-      transition: background 0.3s, transform 0.3s;
+      background: var(--nexa-primary);
+      border: 3px solid #ffffff;
+      box-shadow: 0 0 0 2px var(--nexa-border);
+      transition: all 0.3s ease;
     }
     .timeline-item:hover::before {
-      background: var(--color-accent);
-      transform: scale(1.2);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+      background: var(--nexa-highlight);
+      transform: scale(1.3);
+      box-shadow: 0 0 0 2px var(--nexa-primary-light);
     }
+    
     .timeline-date {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      color: var(--color-accent);
+      color: var(--nexa-secondary);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       margin-bottom: 0.4rem;
-      background: rgba(56, 189, 248, 0.1);
       display: inline-block;
+      background: var(--nexa-bg);
       padding: 4px 10px;
-      border-radius: 8px;
+      border-radius: 6px;
+      border: 1px solid var(--nexa-border);
     }
     .timeline-title {
       font-weight: 800;
-      font-size: 1.15rem;
-      color: var(--color-primary);
-      margin-bottom: 0.2rem;
-      letter-spacing: -0.2px;
+      font-size: 1.1rem;
+      color: var(--nexa-text-main);
+      margin-bottom: 2px;
     }
     .timeline-role {
       font-weight: 600;
-      color: #64748b;
+      color: var(--nexa-primary);
       margin-bottom: 0.6rem;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
+    .timeline-item p { color: var(--nexa-text-muted); font-weight: 400; line-height: 1.5; font-size: 0.9rem;}
 
     /* --- 6. SKILLS --- */
     .skill-bar-container {
-      background: #e2e8f0;
+      background: var(--nexa-bg);
       border-radius: 10px;
-      height: 6px; /* Slimmer bars */
+      height: 8px; 
       overflow: hidden;
       margin-top: 8px;
       margin-bottom: 1.5rem;
+      border: 1px solid var(--nexa-border);
     }
     .skill-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+      background: linear-gradient(90deg, var(--nexa-primary-tint), var(--nexa-primary));
       width: 0;
       border-radius: 10px;
-      transition: width 1.5s ease-out;
+      transition: width 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
-    /* --- 7. LANGUAGES (REVISED COLORS) --- */
+    /* --- 7. LANGUAGES --- */
     .lang-card {
       text-align: center;
-      padding: 1.5rem 1rem;
-      border: 1px solid rgba(255,255,255,0.8);
+      padding: 1.2rem 1rem;
+      border: 1px solid var(--nexa-border);
       border-radius: 20px;
-      background: rgba(255,255,255,0.6);
-      transition: 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+      background: #FFFFFF;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
     .lang-card:hover {
-      background: white;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      box-shadow: 0 10px 20px rgba(182, 62, 93, 0.08);
       transform: translateY(-4px);
+      border-color: var(--nexa-primary-light);
     }
     
     .lang-badge {
-      display: inline-block;
-      padding: 6px 14px;
-      border-radius: 30px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-top: 10px;
+      display: inline-block; padding: 4px 12px; border-radius: 30px;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px;
+      text-transform: uppercase; margin-top: 8px;
     }
-
-    .badge-native {
-        background: rgba(16, 185, 129, 0.1); 
-        color: #059669; 
-        border: 1px solid rgba(16, 185, 129, 0.2);
-    }
-    .lang-card:hover .badge-native { background: rgba(16, 185, 129, 0.2); }
-
-    .badge-intermediate {
-        background: rgba(245, 158, 11, 0.1); 
-        color: #b45309; 
-        border: 1px solid rgba(245, 158, 11, 0.2);
-    }
-    .lang-card:hover .badge-intermediate { background: rgba(245, 158, 11, 0.2); }
+    .badge-native { background: rgba(52, 199, 89, 0.1); color: #27ae60; border: 1px solid rgba(52, 199, 89, 0.2); }
+    .badge-intermediate { background: rgba(255, 149, 0, 0.1); color: #d35400; border: 1px solid rgba(255, 149, 0, 0.2); }
 
     /* --- 8. HOBBIES --- */
     .hobby-item {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      background: rgba(255,255,255,0.6);
-      padding: 1.2rem;
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      margin-bottom: 1rem;
-      transition: 0.3s ease;
+      display: flex; align-items: center; gap: 14px;
+      background: #FFFFFF; padding: 1.2rem; border-radius: 20px;
+      border: 1px solid var(--nexa-border); margin-bottom: 1rem; transition: 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
     .hobby-item:hover {
-      border-color: rgba(56, 189, 248, 0.3);
-      background: white;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+      border-color: var(--nexa-primary-light);
+      box-shadow: 0 8px 24px rgba(182, 62, 93, 0.06);
       transform: translateX(4px);
     }
     .hobby-icon {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      box-shadow: inset 0 2px 4px rgba(255,255,255,1);
-      flex-shrink: 0;
+      width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
+      background: var(--nexa-bg); color: var(--nexa-text-main);
+      display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+      border: 1px solid var(--nexa-border);
     }
 
     /* Footer */
     footer {
-      background: white;
-      padding: 2.5rem 0;
+      background: transparent;
+      padding: 2rem 0;
       text-align: center;
-      font-size: 0.9rem;
-      color: #94a3b8;
-      border-top: 1px solid #e2e8f0;
-      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--nexa-text-muted);
+      font-weight: 500;
     }
-    footer a { text-decoration: none; color: var(--color-secondary); font-weight: 600;}
+    footer strong { color: var(--nexa-text-main); font-weight: 700;}
 
-    /* --- 9. RESPONSIVE MOBILE FIXES --- */
+    /* RESPONSIVE MOBILE */
     @media (max-width: 768px) {
-      header { padding: 7rem 0 4rem; }
-      .profile-pic { width: 130px; height: 130px; }
-      header h1 { font-size: 2rem; }
-      .h5 { font-size: 1rem; }
-      
-      .glass-card { padding: 1.8rem 1.5rem; border-radius: 24px; }
-      
-      .timeline { padding-left: 1.5rem; }
-      .timeline-item::before { left: -1.95rem; width: 14px; height: 14px; }
-      .timeline-title { font-size: 1.05rem; }
-      
-      .lang-card { padding: 1.2rem 0.8rem; }
-      .hobby-item { padding: 1rem; }
+        header { border-bottom-left-radius: 24px; border-bottom-right-radius: 24px; padding: 7rem 1rem 3rem 1rem;}
+        .profile-pic { width: 120px; height: 120px; }
+        .glass-card { padding: 1.8rem 1.5rem; border-radius: 24px; }
+        h1.display-5 { font-size: 1.8rem; }
+        .hobby-item { flex-direction: column; text-align: center; gap: 8px;}
+        .hobby-icon { margin: 0 auto; }
     }
   </style>
 </head>
 <body data-aos-easing="ease-out-cubic" data-aos-duration="800" data-aos-delay="0">
 
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        Harits<span style="color: var(--color-accent)">.</span>
+  <nav class="navbar fixed-top">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a class="navbar-brand m-0" href="#">
+        Harits<span style="color: var(--nexa-primary)">.</span>
       </a>
-      
-      <div class="d-flex align-items-center gap-3">
-        <button class="lang-switch" onclick="toggleLanguage()" id="btn-lang" aria-label="Toggle Language">
-          <i class="bi bi-translate"></i> <span id="lang-label">EN</span>
-        </button>
-      </div>
+      <button class="lang-switch" onclick="toggleLanguage()" id="btn-lang" title="Switch Language">
+        <i class="bi bi-translate me-2"></i> <span id="lang-label">EN</span>
+      </button>
     </div>
   </nav>
 
   <header class="text-center animate__animated animate__fadeIn">
     <div class="container">
-      <div class="profile-container mb-4 mt-2">
-        <img src="hrts.jpg" alt="Usamah Al Harits" class="profile-pic" onerror="this.src='https://ui-avatars.com/api/?name=Usamah+Harits&background=0f172a&color=38bdf8&size=200&bold=true'">
+      <div class="profile-container mb-3 mt-4">
+        <img src="hrts.jpg" alt="Usamah Al Harits" class="profile-pic" onerror="this.src='https://ui-avatars.com/api/?name=Usamah+Harits&background=B63E5D&color=fff&size=200'">
       </div>
-      <h1 class="fw-bold mb-2 tracking-tight">Usamah Al Harits</h1>
-      <p class="h5 text-light opacity-75 mb-4 fw-light" data-i18n="role">Mahasiswa Teknik Informatika & Content Writer</p>
+      <h1 class="fw-bold mb-2 display-5">Usamah Al Harits</h1>
+      <p class="h6 text-white opacity-75 mb-4 fw-normal" data-i18n="role">Mahasiswa Teknik Informatika & Content Writer</p>
       
       <div class="social-links">
         <a href="mailto:emailnya.haritz@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
@@ -374,59 +355,55 @@
     </div>
   </header>
 
-  <main class="container my-5">
-    
-    <div class="row g-4 g-lg-5">
+  <main class="container mb-5">
+    <div class="row g-4">
+      
       <div class="col-lg-5">
-        
-        <section class="mb-4 mb-lg-5 glass-card" data-aos="fade-up">
+        <section class="glass-card mb-4" data-aos="fade-up">
           <h3 class="section-title"><i class="bi bi-person-vcard-fill"></i> <span data-i18n="about_title">Tentang Saya</span></h3>
-          <div data-i18n="about_text" class="text-muted fw-medium">
+          <div data-i18n="about_text" class="text-muted" style="font-size: 0.95rem;">
             <p>Saya memiliki ketertarikan mendalam pada kekuatan narasi. Menulis bagi saya bukan sekadar merangkai kalimat, tapi menciptakan narasi yang bermakna dan terstruktur.</p>
-            <p>Sebagai mahasiswa Informatika, saya melihat titik temu menarik antara bahasa, teknologi, dan perilaku manusia. Saya selalu antusias untuk proyek yang memberikan dampak nyata.</p>
+            <p class="mb-0">Sebagai mahasiswa Informatika, saya melihat titik temu menarik antara bahasa, teknologi, dan perilaku manusia. Saya selalu antusias untuk proyek yang memberikan dampak nyata.</p>
           </div>
         </section>
 
-        <section class="mb-4 mb-lg-5 glass-card" data-aos="fade-up" data-aos-delay="100">
+        <section class="glass-card mb-4" data-aos="fade-up" data-aos-delay="100">
           <h3 class="section-title"><i class="bi bi-stars"></i> <span data-i18n="skills_title">Keahlian</span></h3>
           
           <div class="mb-3">
-            <div class="d-flex justify-content-between fw-bold small text-primary-emphasis mb-1"><span>Copywriting & Writing</span> <span>80%</span></div>
+            <div class="d-flex justify-content-between fw-bold small text-dark mb-1"><span>Copywriting & Writing</span> <span>80%</span></div>
             <div class="skill-bar-container"><div class="skill-fill" style="width: 80%"></div></div>
           </div>
-
           <div class="mb-3">
-            <div class="d-flex justify-content-between fw-bold small text-primary-emphasis mb-1"><span>Microsoft Office</span> <span>75%</span></div>
+            <div class="d-flex justify-content-between fw-bold small text-dark mb-1"><span>Microsoft Office</span> <span>75%</span></div>
             <div class="skill-bar-container"><div class="skill-fill" style="width: 75%"></div></div>
           </div>
-
           <div class="mb-3">
-            <div class="d-flex justify-content-between fw-bold small text-primary-emphasis mb-1"><span>Customer Service</span> <span>80%</span></div>
+            <div class="d-flex justify-content-between fw-bold small text-dark mb-1"><span>Customer Service</span> <span>80%</span></div>
             <div class="skill-bar-container"><div class="skill-fill" style="width: 80%"></div></div>
           </div>
-
-          <div class="mb-3">
-             <div class="d-flex justify-content-between fw-bold small text-primary-emphasis mb-1"><span>Team Work & Leadership</span> <span>85%</span></div>
+          <div class="mb-2">
+             <div class="d-flex justify-content-between fw-bold small text-dark mb-1"><span>Team Work & Leadership</span> <span>85%</span></div>
             <div class="skill-bar-container"><div class="skill-fill" style="width: 85%"></div></div>
           </div>
         </section>
 
-        <section class="mb-4 mb-lg-5 glass-card" data-aos="fade-up" data-aos-delay="200">
+        <section class="glass-card mb-4" data-aos="fade-up" data-aos-delay="150">
           <h3 class="section-title"><i class="bi bi-translate"></i> <span data-i18n="lang_title">Bahasa</span></h3>
-          <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <div class="d-flex gap-2 justify-content-center flex-wrap">
             <div class="lang-card flex-fill">
-              <div class="fs-2 mb-1">🇮🇩</div>
-              <strong class="d-block text-dark">Indonesia</strong>
+              <div class="fs-3 mb-1">🇮🇩</div>
+              <strong class="d-block text-dark" style="font-size: 0.9rem;">Indonesia</strong>
               <span class="lang-badge badge-native">Native</span>
             </div>
             <div class="lang-card flex-fill">
-              <div class="fs-2 mb-1">🇬🇧</div>
-              <strong class="d-block text-dark">English</strong>
+              <div class="fs-3 mb-1">🇬🇧</div>
+              <strong class="d-block text-dark" style="font-size: 0.9rem;">English</strong>
               <span class="lang-badge badge-intermediate">Intermediate</span>
             </div>
             <div class="lang-card flex-fill">
-              <div class="fs-2 mb-1">🇳🇱</div>
-              <strong class="d-block text-dark">Dutch</strong>
+              <div class="fs-3 mb-1">🇳🇱</div>
+              <strong class="d-block text-dark" style="font-size: 0.9rem;">Dutch</strong>
               <span class="lang-badge badge-intermediate">Intermediate</span>
             </div>
           </div>
@@ -435,7 +412,7 @@
 
       <div class="col-lg-7">
         
-        <section class="mb-4 mb-lg-5 glass-card" data-aos="fade-up">
+        <section class="glass-card mb-4" data-aos="fade-up">
           <h3 class="section-title"><i class="bi bi-briefcase-fill"></i> <span data-i18n="exp_title">Pengalaman</span></h3>
           
           <div class="timeline">
@@ -443,76 +420,70 @@
               <div class="timeline-date">2025 – <span data-i18n="now">Sekarang</span></div>
               <div class="timeline-title" data-i18n="job1_title">Ketua</div>
               <div class="timeline-role">Dewan Kerja Ranting Sawangan (Periode 2025/2028)</div>
-              <p class="small text-muted mb-0 fw-medium" data-i18n="job1_desc">Memimpin organisasi, merancang program kegiatan, dan mengembangkan hubungan antaranggota untuk mencapai tujuan bersama.</p>
+              <p data-i18n="job1_desc">Memimpin organisasi, merancang program kegiatan, dan mengembangkan hubungan antaranggota untuk mencapai tujuan bersama.</p>
             </div>
-
             <div class="timeline-item">
               <div class="timeline-date">Agustus 2025</div>
               <div class="timeline-title" data-i18n="job2_title">Internship (Magang)</div>
               <div class="timeline-role">SMK Muhammadiyah 1 Muntilan</div>
-              <p class="small text-muted mb-0 fw-medium" data-i18n="job2_desc">Melaksanakan kegiatan mengajar robotika di SMK, membimbing siswa dalam praktik dan memahami dasar pemrograman serta perakitan robot.</p>
+              <p data-i18n="job2_desc">Melaksanakan kegiatan mengajar robotika di SMK, membimbing siswa dalam praktik dan memahami dasar pemrograman serta perakitan robot.</p>
             </div>
-
             <div class="timeline-item">
               <div class="timeline-date">2024 – 2025</div>
-              <div class="timeline-title" data-i18n="job3_title">Sekretaris II</div>
+              <div class="timeline-title" data-i18n="job4_title">Sekretaris II</div>
               <div class="timeline-role">PERMIKOMNAS Wilayah Jawa Tengah</div>
-              <p class="small text-muted mb-0 fw-medium" data-i18n="job3_desc">Mengelola administrasi dan koordinasi kegiatan organisasi tingkat wilayah serta memastikan komunikasi efektif antar anggota dan pengurus.</p>
+              <p data-i18n="job4_desc">Mengelola administrasi dan koordinasi kegiatan organisasi tingkat wilayah serta memastikan komunikasi efektif antar anggota dan pengurus.</p>
             </div>
-
             <div class="timeline-item">
               <div class="timeline-date">April - Juli 2025</div>
-              <div class="timeline-title" data-i18n="job4_title">Kitchen Staff</div>
+              <div class="timeline-title" data-i18n="job3_title">Kitchen Staff</div>
               <div class="timeline-role">Queenbab, ID, Yogyakarta</div>
-              <p class="small text-muted mb-0 fw-medium" data-i18n="job4_desc">Mengelola persiapan bahan, menjaga kebersihan dapur, dan memastikan kualitas makanan tetap terjaga.</p>
+              <p data-i18n="job3_desc">Mengelola persiapan bahan, menjaga kebersihan dapur, dan memastikan kualitas makanan tetap terjaga.</p>
             </div>
-
             <div class="timeline-item">
               <div class="timeline-date">2023 – 2025</div>
               <div class="timeline-title" data-i18n="job5_title">Kepala Bidang Pembinaan & Pengembangan</div>
               <div class="timeline-role">Dewan Kerja Ranting Sawangan</div>
-              <p class="small text-muted mb-0 fw-medium" data-i18n="job5_desc">Bertanggung jawab dalam mengembangkan program pembinaan anggota, menyusun kegiatan pelatihan, dan memastikan pengembangan keterampilan serta karakter anggota.</p>
+              <p data-i18n="job5_desc">Bertanggung jawab dalam mengembangkan program pembinaan anggota, menyusun kegiatan pelatihan, dan memastikan pengembangan keterampilan serta karakter anggota.</p>
             </div>
-
             <div class="timeline-item">
               <div class="timeline-date">2021 – 2022</div>
               <div class="timeline-title" data-i18n="job6_title">Provos</div>
               <div class="timeline-role">Saka Bhayangkara Polresta Magelang</div>
-              <p class="small text-muted mb-0 fw-medium" data-i18n="job6_desc">Menjaga disiplin anggota, menyelesaikan masalah internal, dan memastikan standar etika serta profesionalisme di lingkungan Polri.</p>
+              <p data-i18n="job6_desc">Menjaga disiplin anggota, menyelesaikan masalah internal, dan memastikan standar etika serta profesionalisme di lingkungan Polri.</p>
             </div>
-
-            <div class="timeline-item">
+             <div class="timeline-item">
               <div class="timeline-date">2021</div>
               <div class="timeline-title" data-i18n="job7_title">Internship (Magang)</div>
               <div class="timeline-role">PT. Asta Brata Technology</div>
-              <p class="small text-muted mb-0 fw-medium" data-i18n="job7_desc">Mempelajari pengembangan perangkat lunak secara praktis dan menerapkan ilmu teknik informatika di lingkungan kerja.</p>
+              <p data-i18n="job7_desc">Mempelajari pengembangan perangkat lunak secara praktis dan menerapkan ilmu teknik informatika di lingkungan kerja.</p>
             </div>
           </div>
         </section>
 
-        <section class="mb-4 mb-lg-5 glass-card" data-aos="fade-up" data-aos-delay="100">
+        <section class="glass-card mb-4" data-aos="fade-up" data-aos-delay="100">
           <h3 class="section-title"><i class="bi bi-mortarboard-fill"></i> <span data-i18n="edu_title">Pendidikan</span></h3>
           
-          <div class="d-flex align-items-center mb-3 p-3 rounded-4 border bg-white bg-opacity-75 shadow-sm" style="border-color: rgba(0,0,0,0.05) !important;">
-            <div class="me-3 fs-1" style="color: var(--color-secondary);"><i class="bi bi-buildings"></i></div>
+          <div class="d-flex align-items-center mb-3 p-3 rounded-4 border" style="background: var(--nexa-bg); border-color: var(--nexa-border) !important;">
+            <div class="me-3 fs-2" style="color: var(--nexa-primary);"><i class="bi bi-buildings-fill"></i></div>
             <div>
-              <h5 class="fw-bold mb-1" style="color: var(--color-primary); font-size: 1.1rem;">STMIK Bina Patria Magelang</h5>
-              <p class="mb-0 fw-semibold text-secondary" style="font-size: 0.95rem;">Teknik Informatika</p>
-               <small class="text-muted fw-medium">(2022 – <span data-i18n="now">Sekarang</span>)</small>
+              <h5 class="fw-bold mb-1 text-dark" style="font-size: 1.05rem;">STMIK Bina Patria Magelang</h5>
+              <p class="mb-0 fw-medium" style="color: var(--nexa-secondary); font-size: 0.9rem;">Teknik Informatika</p>
+              <small class="text-muted" style="font-weight: 600;">(2022 – <span data-i18n="now">Sekarang</span>)</small>
             </div>
           </div>
 
-           <div class="d-flex align-items-center p-3 rounded-4 border bg-white bg-opacity-75 shadow-sm" style="border-color: rgba(0,0,0,0.05) !important;">
-            <div class="me-3 fs-1 opacity-75" style="color: var(--color-secondary);"><i class="bi bi-building-check"></i></div>
+           <div class="d-flex align-items-center p-3 rounded-4 border" style="background: var(--nexa-bg); border-color: var(--nexa-border) !important;">
+            <div class="me-3 fs-2" style="color: #A1A1A6;"><i class="bi bi-building-check"></i></div>
             <div>
-              <h5 class="fw-bold mb-1" style="color: var(--color-primary); font-size: 1.1rem;">SMK Muhammadiyah 1 Muntilan</h5>
-              <p class="mb-0 fw-semibold text-secondary" data-i18n="edu_smk" style="font-size: 0.95rem;">Rekayasa Perangkat Lunak</p>
-              <small class="text-muted fw-medium">(2019 – 2022)</small>
+              <h5 class="fw-bold mb-1 text-dark" style="font-size: 1.05rem;">SMK Muhammadiyah 1 Muntilan</h5>
+              <p class="mb-0 fw-medium" style="color: var(--nexa-secondary); font-size: 0.9rem;" data-i18n="edu_smk">Rekayasa Perangkat Lunak</p>
+              <small class="text-muted" style="font-weight: 600;">(2019 – 2022)</small>
             </div>
           </div>
         </section>
 
-        <section class="glass-card" data-aos="fade-up" data-aos-delay="200">
+        <section class="glass-card" data-aos="fade-up" data-aos-delay="150">
           <h3 class="section-title"><i class="bi bi-controller"></i> <span data-i18n="hobby_title">Hobi</span></h3>
           <div class="row g-3">
             <div class="col-md-6">
@@ -520,7 +491,7 @@
                 <div class="hobby-icon">🎵</div>
                 <div>
                   <strong class="d-block text-dark mb-1" data-i18n="hob_music">Musik</strong>
-                  <p class="small text-muted mb-0 lh-sm fw-medium" data-i18n="hob_music_desc">Sumber inspirasi dan menjaga fokus saat bekerja.</p>
+                  <p class="small text-muted mb-0 lh-sm" data-i18n="hob_music_desc">Sumber inspirasi dan menjaga fokus saat bekerja.</p>
                 </div>
               </div>
             </div>
@@ -529,7 +500,7 @@
                 <div class="hobby-icon">📚</div>
                 <div>
                   <strong class="d-block text-dark mb-1" data-i18n="hob_read">Membaca</strong>
-                  <p class="small text-muted mb-0 lh-sm fw-medium" data-i18n="hob_read_desc">Memperluas wawasan buku dan artikel.</p>
+                  <p class="small text-muted mb-0 lh-sm" data-i18n="hob_read_desc">Memperluas wawasan buku dan artikel.</p>
                 </div>
               </div>
             </div>
@@ -538,7 +509,7 @@
                 <div class="hobby-icon">✍️</div>
                 <div>
                   <strong class="d-block text-dark mb-1" data-i18n="hob_write">Menulis</strong>
-                  <p class="small text-muted mb-0 lh-sm fw-medium" data-i18n="hob_write_desc">Mengekspresikan diri, menulis cerita, diary, dan mengasah kreativitas.</p>
+                  <p class="small text-muted mb-0 lh-sm" data-i18n="hob_write_desc">Mengekspresikan diri, menulis cerita, diary, dan mengasah kreativitas.</p>
                 </div>
               </div>
             </div>
@@ -551,8 +522,7 @@
 
   <footer>
     <div class="container">
-        <p class="mb-1">&copy; 2026 <strong>Usamah Al Harits</strong>. All Rights Reserved.</p>
-        <p class="small opacity-75">Designed with passion & logic.</p>
+        <p class="m-0">&copy; 2026 <strong>Usamah Al Harits</strong>. All Rights Reserved.</p>
     </div>
   </footer>
 
@@ -563,18 +533,18 @@
     // Initialize Animation on Scroll
     AOS.init({
       once: true,
-      offset: 80,
+      offset: 100,
       duration: 600,
-      mirror: false
+      easing: 'ease-out-cubic'
     });
 
-    // --- FIX LOGIKA TRANSLATE (Mencegah Error & Menyamakan Index Job) ---
+    // --- TRANSLATION LOGIC (Revised Content & Bug Fix) ---
     const translations = {
       id: {
         role: "Mahasiswa Teknik Informatika & Content Writer",
         about_title: "Tentang Saya",
         about_text: `<p>Saya memiliki ketertarikan mendalam pada kekuatan narasi. Menulis bagi saya bukan sekadar merangkai kalimat, tapi menciptakan narasi yang bermakna dan terstruktur.</p>
-                     <p>Sebagai mahasiswa Informatika, saya melihat titik temu menarik antara bahasa, teknologi, dan perilaku manusia. Saya selalu antusias untuk proyek yang memberikan dampak nyata.</p>`,
+                     <p class="mb-0">Sebagai mahasiswa Informatika, saya melihat titik temu menarik antara bahasa, teknologi, dan perilaku manusia. Saya selalu antusias untuk proyek yang memberikan dampak nyata.</p>`,
         skills_title: "Keahlian",
         lang_title: "Bahasa",
         exp_title: "Pengalaman",
@@ -583,10 +553,10 @@
         job1_desc: "Memimpin organisasi, merancang program kegiatan, dan mengembangkan hubungan antaranggota untuk mencapai tujuan bersama.",
         job2_title: "Internship (Magang)",
         job2_desc: "Melaksanakan kegiatan mengajar robotika di SMK, membimbing siswa dalam praktik dan memahami dasar pemrograman serta perakitan robot.",
-        job3_title: "Sekretaris II",
-        job3_desc: "Mengelola administrasi dan koordinasi kegiatan organisasi tingkat wilayah serta memastikan komunikasi efektif antar anggota dan pengurus.",
-        job4_title: "Kitchen Staff",
-        job4_desc: "Mengelola persiapan bahan, menjaga kebersihan dapur, dan memastikan kualitas makanan tetap terjaga.",
+        job3_title: "Kitchen Staff",
+        job3_desc: "Mengelola persiapan bahan, menjaga kebersihan dapur, dan memastikan kualitas makanan tetap terjaga.",
+        job4_title: "Sekretaris II",
+        job4_desc: "Mengelola administrasi dan koordinasi kegiatan organisasi tingkat wilayah serta memastikan komunikasi efektif antar anggota dan pengurus.",
         job5_title: "Kepala Bidang Pembinaan & Pengembangan",
         job5_desc: "Bertanggung jawab dalam mengembangkan program pembinaan anggota, menyusun kegiatan pelatihan, dan memastikan pengembangan keterampilan serta karakter anggota.",
         job6_title: "Provos",
@@ -607,7 +577,7 @@
         role: "Informatics Student & Content Writer",
         about_title: "About Me",
         about_text: `<p>I have a profound interest in the power of narrative. For me, writing is not just about stringing sentences together, but creating meaningful, directed, and structured narratives.</p>
-                     <p>As an Informatics student, I see an intriguing intersection between language, technology, and human behavior. I am always enthusiastic about projects that create real impact.</p>`,
+                     <p class="mb-0">As an Informatics student, I see an intriguing intersection between language, technology, and human behavior. I am always enthusiastic about projects that create real impact.</p>`,
         skills_title: "Skills",
         lang_title: "Languages",
         exp_title: "Experience",
@@ -616,10 +586,10 @@
         job1_desc: "Leading the organization, designing activity programs, and developing relationships between members to achieve common goals.",
         job2_title: "Internship",
         job2_desc: "Conducted robotics teaching at a vocational high school, guiding students in hands-on practice and understanding basic programming and robot assembly.",
-        job3_title: "2nd Secretary",
-        job3_desc: "Managing administration and coordination of regional-level organization activities and ensuring effective communication between members and board.",
-        job4_title: "Kitchen Staff",
-        job4_desc: "Managed ingredient preparation, maintained kitchen cleanliness, and ensured consistent food quality.",
+        job3_title: "Kitchen Staff",
+        job3_desc: "Managed ingredient preparation, maintained kitchen cleanliness, and ensured consistent food quality.",
+        job4_title: "2nd Secretary",
+        job4_desc: "Managing administration and coordination of regional-level organization activities and ensuring effective communication between members and board.",
         job5_title: "Head of Development Division",
         job5_desc: "Responsible for developing member coaching programs, arranging training activities, and ensuring the development of member skills and character.",
         job6_title: "Provost",
@@ -646,7 +616,7 @@
       
       // Update Button Label
       const btnLabel = document.getElementById('lang-label');
-      btnLabel.textContent = currentLang === 'id' ? 'EN' : 'ID';
+      btnLabel.textContent = currentLang === 'id' ? 'EN' : 'ID'; // Show target lang
 
       // Update All Text
       document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -659,7 +629,7 @@
             element.textContent = translations[currentLang][key];
           }
           
-          // Add quick fade animation
+          // Add quick fade animation for smoother transition
           element.classList.add('animate__animated', 'animate__fadeIn', 'animate__faster');
           element.addEventListener('animationend', () => {
             element.classList.remove('animate__animated', 'animate__fadeIn', 'animate__faster');
